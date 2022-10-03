@@ -5,12 +5,15 @@ User = get_user_model()
 
 
 class Post(models.Model):
+    class Meta:
+        ordering = ['-pub_date']
+
     text = models.TextField()
     pub_date = models.DateTimeField(auto_now_add=True)
     group = models.ForeignKey(
         'Group',
         on_delete=models.CASCADE,
-        related_name='group',
+        related_name='posts',
         null=True,
         blank=True
     )
