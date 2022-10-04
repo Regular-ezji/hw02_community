@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 <!DOCTYPE html>
 {% block main %}
+  <h1>{{ group.title}}</h1>
+  <p>
+    {{group.description}}
+  </p>
   <div class="container py-5">
     {% for post in posts %}
       <ul>
